@@ -3,7 +3,7 @@ import { Observable, of, throwError } from 'rxjs';
 
 import { DaffNewsletterServiceInterface, DaffNewsletterSubmission } from '@daffodil/newsletter';
 import { DaffNewsletterUnion } from '@daffodil/newsletter';
-import { catchError, map } from 'rxjs/operators';
+import { delay } from 'rxjs/operators';
 
 /**
  * The newsletter inmemory driver to mock the newsletter backend service.
@@ -17,10 +17,10 @@ export class DaffInMemoryNewsletterService implements DaffNewsletterServiceInter
   constructor() { }
 
   send(payload: DaffNewsletterUnion): Observable<DaffNewsletterUnion> {
-    if (payload === undefined) {
+    const wait_time = Math.random() * (1500 - 500) + 500;
+    if (payload === undefined || payload.email === 'ThrowError') {
       return throwError('Failed to subscribe');
     }
-    return of(payload);
+    return of(payload).pipe(delay(wait_time));
   }
-
 }
