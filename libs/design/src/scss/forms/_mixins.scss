@@ -1,0 +1,79 @@
+@import 'daff-theme';
+
+$raised-color: $black;
+
+@mixin control() {
+	display: flex;
+	background: $white;
+	border: 1px solid daff-color($gray, 50);
+	font-size: 1rem;
+	line-height: 1em;
+	height: inherit;
+	transition: border ease-in 150ms;
+	width: 100%;
+	box-sizing: border-box;
+
+	&.daff-raised {
+		.daff-form-label {
+			transform: translateY(-20px) scale(0.8);
+		}
+	}
+
+	&.daff-focused {
+		border: 1px solid $raised-color;
+
+		.daff-form-label {
+			color: $raised-color;
+		}
+	}
+
+	&.daff-error {
+		border: 1px solid $daff-red;
+
+		.daff-form-label {
+			color: $daff-red;
+		}
+	}
+}
+
+@mixin control-padding($padding: 15px) {
+	padding: $padding;
+}
+
+@mixin form() {
+	position: relative;
+	width: 100%;
+}
+
+@mixin label() {
+	.daff-form-label {
+		display: block;
+		background-color: $white;
+		border-radius: 2px;
+		color: daff-color($gray);
+		left: 10px;
+		padding: 5px;
+		pointer-events: none;
+		position: absolute;
+		top: 10px;
+		transform-origin: 0 0;
+		transition: transform 125ms ease-in, color 125ms ease-in;
+	}
+}
+
+@mixin prefix-suffix() {
+	.daff-prefix,
+	.daff-suffix {
+		display: flex;
+		align-items: center;
+		color: $black;
+	}
+
+	.daff-prefix {
+		margin-left: 15px;
+	}
+
+	.daff-suffix {
+		margin-right: 15px;
+	}
+}

@@ -1,0 +1,29 @@
+@import '../../../scss/daff-util';
+
+.daff-form-field {
+	display: block;
+	position: relative;
+
+	&__control {
+		@include control();
+		$root: &;
+		border-radius: 3px;
+
+		@include prefix-suffix();
+	}
+
+	&__form {
+		@include form();
+	}
+
+	@include label();
+
+	&__icon {
+		display: inline-block;
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		pointer-events: none;
+	}
+}

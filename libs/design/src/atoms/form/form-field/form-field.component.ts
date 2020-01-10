@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, DoCheck, ContentChild, Input, AfterContentInit, AfterContentChecked } from '@angular/core';
-import { DaffFormFieldControl } from '../form-field-control';
-import { DaffFormFieldMissingControlMessage } from '../form-field-errors';
+import { DaffFormFieldControl } from './form-field-control';
+import { DaffFormFieldMissingControlMessage } from './form-field-errors';
 
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -29,7 +29,7 @@ export class DaffFormFieldComponent implements DoCheck, AfterContentInit, AfterC
   /**
    * The child form control that the form-field manages
    */
-  @ContentChild(DaffFormFieldControl, { static: false }) _control: DaffFormFieldControl<any>;
+  @ContentChild(DaffFormFieldControl, { static: false }) _control: DaffFormFieldControl;
 
   /**
    * Tracking property to keep a record of whether or not the

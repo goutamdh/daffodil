@@ -4,12 +4,12 @@ import { By } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 
 import { DaffFormFieldComponent } from './form-field.component';
-import { DaffErrorMessageComponent } from '../error-message/error-message.component';
-import { DaffFormFieldMissingControlMessage } from '../form-field-errors';
-import { DaffFormFieldControl } from '../form-field-control';
-import { DaffInputModule } from '../../input/public_api';
+import { DaffErrorMessageComponent } from './error-message/error-message.component';
+import { DaffFormFieldMissingControlMessage } from './form-field-errors';
+import { DaffFormFieldControl } from './form-field-control';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DaffInputModule } from '../input/input.module';
 
 @Component({template: `
   <daff-form-field [formSubmitted]="formSubmittedValue">
@@ -27,7 +27,7 @@ describe('DaffFormFieldComponent | Usage', () => {
   let component: DaffFormFieldComponent;
   let fixture: ComponentFixture<WrapperComponent>;
   let formFieldControlElement: HTMLElement;
-  let control: DaffFormFieldControl<any>;
+  let control: DaffFormFieldControl;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
