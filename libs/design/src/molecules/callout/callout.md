@@ -29,12 +29,10 @@ A `daff-callout` transcludes:
 The color of a callout can be changed by using the `color` property. By default, the color of a callout is `gray`. This can be changed to one of the supported colors. Supported colors: `primary`, `secondary`, `tertiary`, `theme`, `theme-contrast`, `black`, and `white`
 
 ## Layout
-
-The layout of a callout can be defined by using the `layout` property. Supported layouts: `centered`
+- The `layout` property will be deprecated in v1.0.0
 
 ## Size
-
-The size of a callout can be defined by using the `size` property. Supported sizes: `compact`
+- The `size` property will be deprecated in v1.0.0
 
 ## Usage
 
